@@ -1,0 +1,228 @@
+@import 'variables';
+@import 'mixs';
+
+.profile__container {
+    position: relative;
+    @include fsize;
+    * {
+        @extend %Spline-Sans;
+    }
+    .wrapper {
+        position: relative;
+        @include fsize;
+        .profile__header {
+            background-color: $clouds-100;
+            position: relative;
+            @include csize(100%,auto);
+            padding: 8px 24px 8px 24px;
+            border-bottom: 1px solid hsla(251, 20%, 17%, 0.075);
+            @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0;
+            @include user-select(none);
+            .profile__name {
+                position: relative;
+                @include fsize;
+                margin: auto auto auto 0;
+                padding: 16px 8px 16px 8px;
+                * {
+                    font-size: 17px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    color: $black;
+                    @include text-transform(capitalize);
+                    text-align: left;
+                    margin: auto auto auto 0;
+                }
+            }
+        }
+        .profile__form {
+            position: relative;
+            @include csize(100%,auto);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 36px 16px 16px 16px;
+            .form__container {
+                background-color: $clouds-100;
+                position: relative;
+                @include cmax-size(548px,auto);
+                @include cmin-size(280px,auto);
+                border-radius: 4px;
+                padding: 12px;
+                border: 1px solid hsla(251, 20%, 17%, 0.075);
+                @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto;
+                    gap: 16px;
+                    @include csize(100%,auto);
+                    %formButton {
+                        background-color: $blue;
+                        position: relative;
+                        @include csize(100%,auto);
+                        @include cmax-size(250px,auto);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        margin: auto;
+                        padding: 12px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: $white;
+                        border-radius: 4px;
+                        border: 1px solid hsla(251, 20%, 17%, 0);
+                        cursor: pointer;
+                    }
+                    .form__title {
+                        position: relative;
+                        padding: 14px;
+                        text-align: center;
+                        margin: auto;
+                        font-size: 17px;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        color: $blue;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        justify-content: space-between;
+                        align-items: center;
+                        @include csize(100%,auto);
+                        @include user-select(none);
+                        svg {
+                            @include csize(70px,70px);
+                            margin: auto;
+                            @include drop-shadow(3px, 3px, 2px, rgba(0, 0, 0, 0.15));
+                            path {
+                                fill: $blue;
+                            }
+                        }
+                    }
+                    .inputs {
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-flow: row wrap;
+                        flex-wrap: wrap;
+                        gap: 16px;
+                        @include csize(100%,auto);
+                        .fields {
+                            position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            flex: 1;
+                            flex-basis: 1;
+                            gap: 4px;
+                            @include csize(50%,auto);
+                            @include cmin-size(120px,auto);
+                            @include user-select(none);
+                            @keyframes fadeEmailConfirmation {
+                                0% {
+                                    opacity: 0.5;
+                                    @include scale(0.95, 0.95);
+                                }
+                                50% {
+                                    opacity: 1;
+                                    @include scale(1.05, 1.05);
+                                }
+                                100% {
+                                    opacity: 1;
+                                    @include scale(1.0, 1.0);
+                                }
+                            }
+                            label {
+                                position: relative;
+                                display: block;
+                                padding: 4px;
+                                font-size: 16px;
+                                letter-spacing: 1px;
+                                color: $black;
+                                font-weight: 500;
+                            }
+                            input, select {
+                                background-color: $white;
+                                padding: 12px;
+                                border-radius: 4px;
+                                letter-spacing: 1.5px;
+                                font-size: 15px;
+                                letter-spacing: 1px;
+                                color: $black;
+                                font-weight: 600;
+                                border: 1px solid hsla(251, 20%, 17%, 0.075);
+                                @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+                                @include csize(100%,45px);
+                                @include easings(120ms);
+                                &:focus {
+                                    border: 1px solid hsla(251, 20%, 17%, 0.15);
+                                    @include box-shadow(0px,0px,11px,-5px,$blue);
+                                }
+                            }
+                            input[name="email_confirmation"], label[for="email_confirmation"] {
+                                @include animation (fadeEmailConfirmation,180ms,0ms,1,ease-in,alternate);
+                            }
+                            select {
+                                padding-right: 12px;
+                                cursor: pointer;
+                                @include text-transform(capitalize);
+                            }
+                            * > #birthdate {
+                                cursor: pointer !important;
+                            }
+                            button {
+                                @extend %formButton;
+                            }
+                            button.inactive {
+                                color: $black;
+                                cursor: initial;
+                                background-color: hsla(250, 20%, 17%, 0.025);
+                                border: 1px solid hsla(251, 20%, 17%, 0.1);
+                                @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+                            }
+                        }
+                    }
+                    p {
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                        color: $green;
+                        font-weight: 500;
+                        padding: 4px;
+                        margin: 0;
+                        text-align: left;
+                    }
+                    .errors {
+                        color: $red;
+                    }
+                    .changed__email__message {
+                        font-size: 15px;
+                        color: $light-orange;
+                    }
+                    .send__verification__link {
+                        @extend %formButton;
+                        background-color: transparent;
+                        color: $blue;
+                        letter-spacing: 1.5px;
+                        margin-left: 0;
+                        padding: 0 4px 8px 4px;
+                        @include csize(fit-content,auto);
+                    }
+    
+                }
+                .verification__form {
+                    border-bottom: 1px solid hsla(251, 20%, 17%, 0);
+                    @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0));
+                }
+            }
+            
+        }
+    }
+}

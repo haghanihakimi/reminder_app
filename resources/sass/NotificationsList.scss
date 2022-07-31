@@ -1,0 +1,149 @@
+@import 'variables';
+@import 'mixs';
+
+.notifications__list {
+    background-color: $clouds-100;
+    position: relative;
+    @include fsize;
+    @include cmax-size(380px,auto);
+    @include cmin-size(360px,auto);
+    border-right: 1px solid hsla(250, 20%, 17%, 0.075);
+    @include user-select(none);
+    * {
+        @extend %Spline-Sans;
+    }
+    .ps {
+        position: relative;
+        @include fsize;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden !important;
+        .notifications__box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 12px;
+            @include csize(100%,auto);
+            .header {
+                font-size: 18px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: $black;
+                padding: 4px;
+                text-align: center;
+                @include text-transform(capitalize);
+                margin: auto;
+            }
+            form {
+                position: relative;
+                @include csize(100%,auto);
+                button {
+                    background-color: transparent;
+                    position: relative;
+                    display: block;
+                    @include csize(fit-content,auto);
+                    padding: 8px;
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $blue;
+                    letter-spacing: 1px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    @include text-transform(capitalize);
+                }
+            }
+            .notifications__items {
+                background-color: $white;
+                position: relative;
+                @include csize(100%,auto);
+                border: 1px solid hsla(251, 20%, 17%, 0.075);
+                @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+                @include easings(160ms);
+                &:hover {
+                    background-color: $clouds-50;
+                }
+                a {
+                    display: block;
+                    text-decoration: none;
+                    @include fsize;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 0;
+                    padding: 4px;
+                    .notification__icon {
+                        position: relative;
+                        @include csize(90px,100%);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        div {
+                            position: relative;
+                            margin: auto;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            @include csize(auto, fit-content);
+                            .material-symbols-rounded {
+                                font-variation-settings:
+                                'FILL' 1,
+                                'wght' 700,
+                                'GRAD' 200,
+                                'opsz' 48;
+                                font-size: 34px;
+                            }
+                            span.warning {
+                                color: $orange;
+                            }
+                            span.overdue {
+                                color: $red;
+                            }
+                            span.normal {
+                                color: $blue;
+                            }
+                        }
+                    }
+                    .notification__contents {
+                        position: relative;
+                        @include fsize;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0;
+                        .notification__title, .notification__body {
+                            position: relative;
+                            @include csize(100%,auto);
+                            span, p {
+                                display: block;
+                                font-size: 15px;
+                                font-weight: 600;
+                                letter-spacing: 1px;
+                                padding: 4px;
+                                word-wrap: break-word;
+                                color: $black;
+                                &:first-letter {
+                                    @include text-transform(uppercase);
+                                }
+                            }
+                            p {
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .empty {
+            font-size: 20px;
+            font-weight: 700;
+            color: $black;
+            opacity: 0.55;
+            letter-spacing: 1px;
+            padding: 8px;
+            text-align: center;
+            margin: 0 auto auto auto;
+            @include text-transform(capitalize);
+        }
+    }
+}

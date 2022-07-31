@@ -1,0 +1,260 @@
+@import 'variables';
+@import 'mixs';
+
+.reminders__list {
+    position: relative;
+    @include csize(100%,auto);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 0;
+    @include user-select(none);
+    * {
+        @extend %Spline-Sans;
+    }
+    .reminders__selector {
+        position: relative;
+        @include csize(100%,auto);
+        padding: 24px;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        justify-content: center;
+        align-items: flex-start;
+        z-index: 2;
+        form {
+            position: relative;
+            @include csize(100%,auto);
+            padding: 0;
+            select {
+                background-color: transparent;
+                position: relative;
+                @include csize(100%,auto);
+                padding: 12px;
+                font-size: 15px;
+                font-size: 600;
+                letter-spacing: 1px;
+                color: $black;
+                text-align: right;
+                cursor: pointer;
+                border: none;
+            }
+        }
+    }
+    .reminder__list__wrapper {
+        position: relative;
+        @include csize(100%,auto);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        .reminder__list__box {
+            background-color: $white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            @include csize(100%,auto);
+            padding: 12px;
+            @include user-select(none);
+            cursor: pointer;
+            border-radius: 8px;
+            border: 1px solid hsla(250, 20%, 17%, 0.1);
+            @include box-shadow(0px,0px,18px,-15px,rgba(0,0,0,0.64));
+            @include easings(160ms);
+            a {
+                text-decoration: none;
+                display: block;
+                @include csize(100%,auto);
+                .list__box {
+                    position: relative;
+                    @include fsize;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2px;
+                    span {
+                        position: relative;
+                        font-size: 13px;
+                        font-weight: 500;
+                        color: $black;
+                        letter-spacing: 1px;
+                        @include text-transform(capitalize);
+                        .material-symbols-rounded {
+                            font-size: 09px;
+                            font-variation-settings:
+                                'FILL' 1,
+                                'wght' 700,
+                                'GRAD' 200,
+                                'opsz' 48;
+                        }
+                        .coming {
+                            color: $green;
+                        }
+                        .deadline {
+                            color: $orange;
+                        }
+                        .overdue {
+                            color: $red;
+                        }
+                    }
+                    .title__box {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 4px;
+                        @include csize(auto,auto);
+                        .reminder__title__desc {
+                            opacity: 0.45;
+                        }
+                        .private__icon {
+                            color: $green;
+                        }
+                        .shared__icon {
+                            color: $blue;
+                        }
+                        .public__icon {
+                            color: $orange;
+                        }
+                        .material-symbols-rounded {
+                            font-size: 12px;
+                            font-variation-settings:
+                            'FILL' 1,
+                            'wght' 700,
+                            'GRAD' 200,
+                            'opsz' 48;
+                        }
+                    }
+                    .reminder__title {
+                        opacity: 1;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                    .reminder__summary {
+                        opacity: 0.7;
+                        margin: 6px 0 0 0;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        padding: 0 12px 0 14px;
+                    }
+                    .reminder__time {
+                        opacity: 0.5;
+                        margin: 6px 0 0 0;
+                    }
+                    .time {
+                        opacity: 1;
+                        @include text-transform(initial);
+                    }
+                }
+            }
+            &:hover {
+                .controls__box {
+                    display: flex;
+                }
+            }
+            .controls__box {
+                position: relative;
+                @include csize(100%,auto);
+                padding: 12px 4px 4px 4px;
+                display: none;
+                flex-direction: column;
+                gap: 4px;
+                .controls {
+                    position: relative;
+                    @include csize(100%,auto);
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+                    @include animation (FadePanelItemControls, 160ms, 0ms, 1, ease-in, alternate);
+                    a, button {
+                        background-color: transparent;
+                        display: inline-flex;
+                        flex-direction: row;
+                        gap: 2px;
+                        justify-content: space-between;
+                        @include csize(auto,auto);
+                        padding: 0;
+                        border: none;
+                        cursor: pointer;
+                        span {
+                            font-size: 13px;
+                            color: $blue;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            margin: auto 0 auto 0;
+                            @include text-transform(uppercase);
+                        }
+                        .material-symbols-rounded {
+                            font-size: 12px;
+                            font-variation-settings:
+                            'FILL' 1,
+                            'wght' 600,
+                            'GRAD' 200,
+                            'opsz' 48;
+                        }
+                    }
+                }
+                .shared__link {
+                    position: relative;
+                    display: block;
+                    padding: 0;
+                    @include csize(100%,auto);
+                    .link {
+                        background-color: $body-bg;
+                        font-size: 15px;
+                        letter-spacing: 1px;
+                        color: $black;
+                        font-weight: 500;
+                        border: 1px solid hsla(250, 20%, 17%, 0.1);
+                        border-radius: 2px;
+                        padding: 6px 40px 6px 6px;
+                        cursor: text;
+                        @include user-select(text);
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                    button {
+                        border: none;
+                        cursor: pointer;
+                        @include csize(32px,100%);
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        border-top-right-radius: 2px;
+                        border-bottom-right-radius: 2px;
+                        padding: 4px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &:hover {
+                            span {
+                                opacity: 1;
+                            }
+                        }
+                        .material-symbols-rounded {
+                            font-size: 14px;
+                            color: $black;
+                            opacity: 0.64;
+                            @include easings(120ms);
+                            font-variation-settings:
+                            'FILL' 1,
+                            'wght' 700,
+                            'GRAD' 200,
+                            'opsz' 48
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .reminder__notfound {
+        margin: auto;
+        font-size: 18px;
+        opacity: 0.7;
+    }
+}

@@ -1,0 +1,14 @@
+@import 'variables';
+@import 'mixs';
+* {
+    @include everything(border-box);
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    @include fsize;
+    #app {
+        background-color: $clouds-200;
+        @include fsize
+    }
+}

@@ -1,0 +1,263 @@
+@import 'variables';
+@import 'mixs';
+@import 'keyframes';
+
+.dashboard__container {
+    padding: 0;
+    position: relative;
+    @include fsize;
+    overflow: hidden !important;
+    .side__bar {
+        background-color: $blue;
+        position: absolute;
+        display: block;
+        bottom: 27px;
+        opacity: 1;
+        left: 0;
+        right: 0;
+        margin: auto;
+        @include csize(100%,auto);
+        @include cmax-size(1080px,auto);
+        border-radius: 720px;
+        @include blur(0em);
+        z-index: 7;
+        border: 1px solid hsla(250, 20%, 17%, 0.1);
+        @include animation (fadeSideBar, 500ms, 0ms, 1, ease-in, alternate);
+        @include box-shadow(0px,10px,20px,-12px,hsla(250, 20%, 17%, 0.75));
+        @include user-select(none);
+        .side__bar__box {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @include fsize;
+            border-radius: 720px;
+            %ButtonEffects {
+                &:hover {
+                    background-color: $clouds-200;
+                    span {
+                        color: $blue;
+                    }
+                    .material-symbols-rounded {
+                        @include easings(200ms);
+                        font-variation-settings:
+                        'FILL' 1,
+                        'wght' 500,
+                        'GRAD' 100,
+                        'opsz' 48
+                    }
+                }
+            }
+            .logo__box {
+                background-color: $blue;
+                position: relative;
+                display: flex;
+                justify-content: baseline;
+                align-items: baseline;
+                @include csize(90px, 60px);
+                border-top-left-radius: 720px;
+                border-bottom-left-radius: 720px;
+                a {
+                    padding: 12px;
+                    display: block;
+                    text-decoration: none;
+                    font-size: 25px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    color: $clouds-200;
+                    margin: auto;
+                    @extend %Signika;
+                    border-top-left-radius: 720px;
+                    border-bottom-left-radius: 720px;
+                }
+            }
+
+            .middle__box {
+                position: relative;
+                @include csize(100%, 60px);
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: baseline;
+                gap: 0;
+                .boxes {
+                    position: relative;
+                    @include csize(60px,60px);
+                    display: flex;
+                    cursor: pointer;
+                    a, button {
+                        background-color: $warm-blue;
+                        text-decoration: none;
+                        position: relative;
+                        @include csize(45px,45px);
+                        margin: auto;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        border-radius: 720px;
+                        border: 1px inset hsla(250, 20%, 17%, 0.1);
+                        @include easings(200ms);
+                        @extend %ButtonEffects;
+                        span {
+                            font-size: 25px;
+                            color: $white;
+                            @include easings(200ms);
+                        }
+                        .material-symbols-rounded {
+                            @include easings(200ms);
+                            font-variation-settings:
+                            'FILL' 0,
+                            'wght' 400,
+                            'GRAD' 100,
+                            'opsz' 48
+                        }
+                        span.active {
+                            font-variation-settings: 'FILL' 1,'wght' 400,'GRAD' 100, 'opsz' 48;
+                        }
+                    }
+                    a.active {
+                        .material-symbols-rounded {
+                            @include easings(200ms);
+                            font-variation-settings:
+                            'FILL' 1,
+                            'wght' 500,
+                            'GRAD' 200,
+                            'opsz' 48
+                        }
+                    }
+                }
+            }
+
+            .signout__box {
+                background-color: $blue;
+                position: relative;
+                @include csize(90px, 60px);
+                border-top-right-radius: 720px;
+                border-bottom-right-radius: 720px;
+                form {
+                    @include fsize;
+                    position: relative;
+                    display: block;
+                    display: flex;
+                    button {
+                        background-color: transparent;
+                        position: relative;
+                        @include fsize;
+                        margin: auto;
+                        border: none;
+                        border-radius: 0;
+                        color: $clouds-200;
+                        cursor: pointer;
+                        display: flex;
+                        border-top-right-radius: 720px;
+                        border-bottom-right-radius: 720px;
+                        span {
+                            margin: auto;
+                            font-size: 25px;
+                        }
+                        .material-symbols-rounded {
+                            font-variation-settings:
+                            'FILL' 0,
+                            'wght' 600,
+                            'GRAD' 200,
+                            'opsz' 48
+                        }
+                    }
+                    button.inactive {
+                        opacity: 0.5;
+                    }
+                    button.active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .body__layout__ps {
+        position: relative;
+        @include fsize;
+        z-index: 5;
+        padding: 0 0 123px 0;
+        overflow: auto;
+        overflow-x: hidden;
+        .dashboard__grids {
+            position: relative;
+            @include fsize;
+            display: flex;
+            flex-direction: row;
+            gap: 0;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .foot__shadow {
+            background: rgba(245,245,245,0.75);
+            background: -moz-linear-gradient(top, rgba(245,245,245,0.75) 0%, rgba(245,245,245,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(245,245,245,0.75)), color-stop(100%, rgba(245,245,245,1)));
+            background: -webkit-linear-gradient(top, rgba(245,245,245,0.75) 0%, rgba(245,245,245,1) 100%);
+            background: -o-linear-gradient(top, rgba(245,245,245,0.75) 0%, rgba(245,245,245,1) 100%);
+            background: -ms-linear-gradient(top, rgba(245,245,245,0.75) 0%, rgba(245,245,245,1) 100%);
+            background: linear-gradient(to bottom, rgba(245,245,245,0.75) 0%, rgba(245,245,245,1) 100%);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            @include backblur(1.5px);
+            @include csize(100%,122px);
+            overflow: hidden;
+            @include user-select(none);
+        }
+    }
+    @include phone (898px) {
+        .side__bar {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 0;
+            @include animation (fadeSideBarMedia, 1s, 0ms, 1, ease-in, alternate);
+            .side__bar__box {
+                .logo__box {
+                    @include csize(90px, 45px);
+                    border-radius: 0;
+                    a {
+                        padding: 12px;
+                        display: block;
+                        text-decoration: none;
+                        font-size: 20px;
+                        border-radius: 0
+                    }
+                }
+                .middle__box {
+                    @include csize(100%, 45px);
+                    border-radius: 0;
+                    @include csize(45px,45px);
+                    gap: 12px;
+                    .boxes {
+                        @include csize(45px,45px);
+                        a {
+                            @include csize(36px,36px);
+                            border-radius: 720px;
+                        }
+                    }
+                }
+                .signout__box {
+                    @include csize(90px, 45px);
+                    border-radius: 0;
+                    form {
+                        border-radius: 0;
+                        button {
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .body__layout__ps {
+            padding: 0 0 46px 0;
+            .foot__shadow {
+                display: none;
+            }
+        }
+    }
+}

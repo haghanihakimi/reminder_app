@@ -1,0 +1,70 @@
+@import 'variables';
+@import 'mixs';
+
+.reminders__header {
+    position: relative;
+    @include csize(100%,auto);
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    align-items: flex-start;
+    * {
+        @extend %Spline-Sans;
+    }
+    .boxes__item {
+        background-color: $white;
+        position: relative;
+        @include csize(100%,110px);
+        @include cmax-size(110px,110px);
+        @include cmin-size(64px, 64px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0;
+        padding: 8px;
+        border-radius: 7px;
+        border: 1px solid hsla(250, 20%, 17%, 0.09);
+        @include user-select(none);
+        cursor: pointer;
+        .counter__box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2px;
+            @include csize(auto,auto);
+            .counter {
+                font-size: 22px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: $black;
+                padding: 4px;
+            }
+            .material-symbols-rounded {
+                font-size: 11px;
+                font-variation-settings:
+                'FILL' 1,
+                'wght' 700,
+                'GRAD' 200,
+                'opsz' 48;
+            }
+        }
+        .item__title__box {
+            @include csize(100%,auto);
+            position: relative;
+            text-align: center;
+            span {
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: $black;
+                opacity: 0.55;
+                text-align: center;
+                margin: auto;
+                @include text-transform(capitalize);
+            }
+        }
+    }
+}

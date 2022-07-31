@@ -1,0 +1,166 @@
+@import 'variables';
+@import 'mixs';
+
+.security__settings {
+    position: relative;
+    @include fsize;
+    padding: 0;
+    overflow: hidden;
+    * {
+        @extend %Spline-Sans;
+    }
+    .ps {
+        position: relative;
+        @include fsize;
+        .settings__header {
+            background-color: $clouds-100;
+            position: relative;
+            @include csize(100%,auto);
+            padding: 8px 24px 8px 24px;
+            border-bottom: 1px solid hsla(251, 20%, 17%, 0.075);
+            @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0;
+            @include user-select(none);
+            .settings__title {
+                position: relative;
+                @include fsize;
+                margin: auto auto auto 0;
+                padding: 16px 8px 16px 8px;
+                * {
+                    font-size: 17px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    color: $black;
+                    @include text-transform(capitalize);
+                    text-align: left;
+                    margin: auto auto auto 0;
+                }
+            }
+        }
+        .settings__container {
+            @include csize(100%,auto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 45px 12px 12px 12px;
+            .settings__formbox {
+                background-color: $clouds-100;
+                position: relative;
+                @include csize(100%,auto);
+                @include cmax-size(420px,auto);
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                border-radius: 4px;
+                border: 1px solid hsla(251, 20%, 17%, 0.1);
+                @include box-shadow(0px,0px,15px,-5px,hsla(251, 20%, 17%, 0.085));
+                .settings__forms {
+                    position: relative;
+                    @include csize(100%,auto);
+                    padding: 12px;
+                    @include user-select(none);
+                    border-bottom: 1px solid hsla(251, 20%, 17%, 0.1);
+                    &:last-child {
+                        border: none;
+                    }
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                        @include csize(100%,auto);
+                        position: relative;
+                        h3 {
+                            font-size: 16px;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                            color: $black;
+                            padding: 0;
+                            text-align: left;
+                            margin: 0;
+                            position: relative;
+                            display: block;
+                        }
+                        .toggle__box {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            @include csize(100%,auto);
+                            padding: 0;
+                            span {
+                                font-size: 15px;
+                                font-weight: 500;
+                                letter-spacing: 1px;
+                                color: $black;
+                                position: relative;
+                            }
+                            .mail__notification__toggle {
+                                background-color: $white;
+                                margin: auto 0 auto auto auto;
+                                position: relative;
+                                padding: 0;
+                                margin: auto 0 auto auto !important;
+                                cursor: pointer;
+                                @include csize(45px,20px);
+                                border-radius: 720px;
+                                border: 1px solid hsla(251, 20%, 17%, 0.1);
+                                span {
+                                    position: absolute;
+                                    @include csize(20px,20px);
+                                    border: 1px solid hsla(251, 20%, 17%, 0.07);
+                                    border-radius: 720px;
+                                    @include easings(160ms);
+                                }
+                                span.active {
+                                    background-color: $blue;
+                                    top: -1px;
+                                    right: -1px;
+                                }
+                                span.inactive {
+                                    background-color: hsla(250, 20%, 17%, 0.25);
+                                    top: -1px;
+                                    left: -1px;
+                                }
+                            }
+                        }
+                        button {
+                            background-color: $blue;
+                            border-radius: 4px;
+                            @include csize(auto,auto);
+                            display: inline-flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 8px;
+                            font-size: 15px;
+                            letter-spacing: 1px;
+                            color: $white;
+                            border: none;
+                            cursor: pointer;
+                            font-weight: 500;
+                            margin: auto auto auto 0;
+                        }
+                        button.reset__password {
+                            background-color: transparent;
+                            color: $blue;
+                            padding: 0;
+                        }
+                    }
+                    .errors {
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: $red;
+                        letter-spacing: 1px;
+                        padding: 4px 0 0 0;
+                        margin: 0;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}

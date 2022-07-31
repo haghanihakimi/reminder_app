@@ -1,0 +1,77 @@
+@import 'variables';
+@import 'mixs';
+
+.home__sections {
+    padding: 0;
+}
+.emailVerify__notice {
+    position: relative;
+    @include fsize;
+    z-index: 0;
+    .email__verification__notice {
+        @include fsize;
+        padding: 90px 24px 24px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+            background-color: $clouds-50;
+            margin: auto;
+            border-radius: 2px;
+            @include csize(100%,auto);
+            @include cmax-size(480px,auto);
+            @include cmin-size(280px,180px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 0;
+            border: 1px solid hsla(251, 20%, 17%, 0.075);
+            @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+            h2 {
+                font-size: 18px;
+                letter-spacing: 1px;
+                color: $black;
+                padding: 8px;
+                text-align: center;
+                margin: auto;
+                @extend %Spline-Sans;
+            }
+            form {
+                position: relative;
+                @include csize(100%,auto);
+                margin: 0 auto auto auto;
+                padding: 8px;
+                display: block;
+                button {
+                    background-color: transparent;
+                    color: $blue;
+                    font-size: 15px;
+                    font-weight: 600;
+                    letter-spacing: 1.5px;
+                    cursor: pointer;
+                    @extend %Spline-Sans;
+                    margin: 0 auto 0 auto;
+                    display: block;
+                    border: none;
+                    @include csize(fit-content,auto);
+                }
+                button.active {
+                    opacity: 1;
+                }
+                button.inactive {
+                    opacity: 0.5;
+                }
+            }
+            p {
+                margin: 0 auto 0 auto;
+                font-size: 14px;
+                letter-spacing: 1px;
+                font-weight: 500;
+                color: $green;
+                @extend %Spline-Sans;
+                padding: 6px;
+                text-align: center;
+            }
+        }
+    }
+}

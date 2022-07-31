@@ -1,0 +1,200 @@
+@import 'variables';
+@import 'mixs';
+
+.login__layout {
+    position: relative;
+    @include fsize;
+    padding: 0px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    * {
+        @extend %Spline-Sans;
+    }
+    .login__container {
+        background-color: hsla(226, 39%, 95%, 0.9);
+        position: relative;
+        margin: auto;
+        @include csize(100%, auto);
+        @include cmax-size(420px,auto);
+        border-radius: 1px;
+        border: 1px solid hsla(251, 20%, 17%, 0.075);
+        @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+        %form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            @include csize(100%,auto);
+            padding: 16px;
+        }
+        form {
+            @extend %form;
+            .title {
+                position: relative;
+                @include csize(100%,auto);
+                padding: 2px;
+                text-align: center;
+                @include user-select(none);
+                &::after {
+                    background-color: $black;
+                    position: absolute;
+                    content: '';
+                    @include csize(90%,1px);
+                    opacity: 0.1;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    border-radius: 720px;
+                    z-index: 0;
+                }
+                span {
+                    background-color: #edf0f7;
+                    display: block;
+                    position: relative;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    padding: 6px;
+                    @include csize(fit-content,auto);
+                    color: $black;
+                    font-size: 15px;
+                    margin: auto;
+                    text-align: center;
+                    z-index: 1;
+                    border-radius: 2px;
+                    border: 1px solid hsla(251, 20%, 17%, 0.1);
+                    @include text-transform(uppercase);
+                }
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 700;
+                color: $black;
+                letter-spacing: 1px;
+                padding: 8px;
+                text-align: center;
+                margin: auto;
+                @extend %Signika;
+                cursor: text;
+                span {
+                    @include text-transform(capitalize);
+                }
+            }
+            .inputs {
+                position: relative;
+                @include csize(100%,auto);
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                input {
+                    background-color: $body-bg;
+                    padding: 8px;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    color: $black;
+                    border-radius: 1px;
+                    @extend %Spline-Sans;
+                    @include csize(100%,36px);
+                    border: 1px solid hsla(251, 20%, 17%, 0.15);
+                }
+                button {
+                    background-color: $blue;
+                    position: relative;
+                    @include csize(100%,auto);
+                    padding: 8px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 17px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    color: $body-bg;
+                    @extend %Spline-Sans;
+                    border-radius: 1px;
+                    border: none;
+                    cursor: pointer;
+                    @include user-select(none);
+                    @include text-transform(uppercase);
+                }
+                a {
+                    text-decoration: none;
+                    padding: 8px;
+                    text-align: center;
+                    color: $blue;
+                    letter-spacing: 1px;
+                    font-weight: 600;
+                    @extend %Spline-Sans;
+                    display: block;
+                    text-align: left;
+                    margin: auto auto auto 0;
+                    @include text-transform(capitalize);
+                    @include user-select(none);
+                }
+                .login__errors {
+                    padding: 0 8px;
+                    font-size: 15px;
+                    color: $red;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    @extend %Spline-Sans;
+                    text-align: left;
+                    margin: 0;
+                }
+            }
+        }
+        .oauth__logins {
+            @include csize(100%,auto);
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-flow: row wrap;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 8px 12px 8px;
+            form {
+                position: relative;
+                padding: 0;
+                @include csize(auto,auto);
+                button {
+                    background-color: $body-bg;
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    border-radius: 2px;
+                    padding: 8px;
+                    font-size: 15px;
+                    letter-spacing: 1px;
+                    flex: 1;
+                    flex-basis: 1;
+                    @include cmax-size(105px,auto);
+                    @include cmin-size(100px,auto);
+                    color: $black;
+                    font-weight: 500;
+                    cursor: pointer;
+                    border: 1px solid hsla(251, 20%, 17%, 0.075);
+                    @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+                    @include easings(120ms);
+                    &:hover {
+                        background-color: $clouds-100;
+                    }
+                    svg {
+                        position: relative;
+                        margin: auto 0 auto 0;
+                        @include csize(15px,15px);
+                    }
+                }
+            }
+        }
+    }
+}

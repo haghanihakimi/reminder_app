@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'mixs';
+
+@keyframes fadeSideBar {
+    from {
+        opacity: 0;
+        bottom: 0;
+        @include blur(1em);
+    }
+    to {
+        opacity: 1;
+        bottom: 27px;
+        @include blur(0em);
+    }
+}
+@keyframes fadeSideBarMedia {
+    from {
+        opacity: 0;
+        bottom: 0;
+        @include blur(1em);
+    }
+    to {
+        opacity: 1;
+        bottom: 0;
+        @include blur(0em);
+    }
+}
+@keyframes FadePanelItemControls {
+    from {
+        opacity: 0;
+        @include blur(1em);
+    }
+    to {
+        opacity: 1;
+        @include blur(0em);
+    }
+}

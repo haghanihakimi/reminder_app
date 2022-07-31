@@ -1,0 +1,296 @@
+@import 'variables';
+@import 'mixs';
+@import 'keyframes';
+
+.container {
+    position: relative;
+    @include fsize;
+    overflow: hidden;
+    * {
+        @extend %Spline-Sans;
+    }
+    .wrapper {
+        position: relative;
+        @include fsize;
+        margin: auto;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .reminder__info {
+            background-color: $white;
+            @include csize(100%,auto);
+            @include cmax-size(400px,auto);
+            @include cmin-size(290px,auto);
+            margin: auto auto 24px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: 0 auto auto auto;
+            border-radius: 6px;
+            border: 1px solid hsla(251, 20%, 17%, 0.1);
+            @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+            h2 {
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: $black;
+                opacity: 0.8;
+                padding: 8px;
+                text-align: center;
+                margin: auto 0 auto 0;
+            }
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 4px;
+                padding: 12px;
+                @include csize(100%,auto);
+                text-align: left;
+                * {
+                    font-size: 16px;
+                    color: $black;
+                    letter-spacing: 1px;
+                }
+                span {
+                    font-weight: 700;
+                    opacity: 0.9;
+                }
+                p {
+                    font-weight: 500;
+                }
+            }
+        }
+        .form__box {
+            background-color: $white;
+            position: relative;
+            @include csize(100%,auto);
+            @include cmax-size(400px,auto);
+            @include cmin-size(290px,auto);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin: auto auto 24px auto;
+            border-radius: 6px;
+            border: 1px solid hsla(251, 20%, 17%, 0.1);
+            @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+            .alert__icon {
+                position: relative;
+                padding: 24px 8px 8px 8px;
+                margin: 0 auto;
+                @include cmin-size(auto,auto);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include user-select(none);
+                span {
+                    font-size: 45px;
+                    color: $light-orange;
+                }
+                .material-symbols-rounded {
+                    font-variation-settings:
+                    'FILL' 1,
+                    'wght' 700,
+                    'GRAD' 200,
+                    'opsz' 48;
+                }
+            }
+            .alert__title {
+                position: relative;
+                padding: 8px;
+                margin: 0 auto;
+                @include user-select(none);
+                h3 {
+                    font-size: 20px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    color: $darkest-blue;
+                    opacity: 0.85;
+                    text-align: center;
+                    padding: 0;
+                    margin: auto;
+                }
+            }
+            .alert__descriptions {
+                position: relative;
+                padding: 16px 8px 8px 8px;
+                @include cmax-size(380px,auto);
+                margin: 0 auto;
+                @include user-select(none);
+                p {
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    font-weight: 600;
+                    letter-spacing: 1.5px;
+                    color: $black;
+                    text-align: center;
+                    padding: 0;
+                    margin: auto;
+                }
+            }
+            .delete__controls {
+                position: relative;
+                padding: 16px 8px 8px 8px;
+                margin: 0 auto;
+                @include user-select(none);
+                form {
+                    display: flex;
+                    flex-direction: row;
+                    flex-flow: wrap;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 16px;
+                    align-items: center;
+                    @include csize(100%,auto);
+                    padding: 16px;
+                    button {
+                        background-color: $light-orange;
+                        padding: 6px;
+                        font-size: 16px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                        color: $white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 2px;
+                        border: none;
+                        cursor: pointer;
+                    }
+                    a {
+                        text-decoration: none;
+                        padding: 4px;
+                        font-size: 16px;
+                        font-weight: 500;
+                        letter-spacing: 1px;
+                        text-align: center;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $black;
+                        border: 2px solid $green;
+                        border-radius: 2px;
+                    }
+                }
+            }
+            .box__form {
+                position: relative;
+                @include csize(100%,auto);
+                padding: 16px;
+                .wrapper {
+                    @include csize(100%,auto);
+                    position: relative;
+                    display: block;
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                        @include csize(100%,auto);
+                        position: relative;
+                        label {
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                            color: $black;
+                            font-size: 15px;
+                        }
+                        input, textarea {
+                            background-color: $body-bg;
+                            position: relative;
+                            @include csize(100%,45px);
+                            border-radius: 2px;
+                            border: 1px solid hsla(251, 20%, 17%, 0.1);
+                            @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+                            font-size: 16px;
+                            font-weight: 500;
+                            padding: 12px;
+                            letter-spacing: 1px;
+                            color: $black;
+                            @include easings(120ms);
+                            &:focus {
+                                background-color: $white;
+                            }
+                        }
+                        select {
+                            background-color: $body-bg;
+                            position: relative;
+                            @include csize(100%,45px);
+                            font-size: 16px;
+                            letter-spacing: 1px;
+                            color: $black;
+                            padding: 8px 24px 8px 8px;
+                            text-align: left;
+                            border-radius: 2px;
+                            cursor: pointer;
+                            @include text-transform(uppercase);
+                            border: 1px solid hsla(251, 20%, 17%, 0.1);
+                            @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+                            @include easings(120ms);
+                            &:hover {
+                                background-color: $white;
+                            }
+                        }
+                        .privacy__note {
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: $black;
+                            opacity: 0.7;
+                            letter-spacing: 1px;
+                            padding: 4px;
+                        }
+                        textarea {
+                            @include fsize;
+                            @include cmax-size(auto,200px);
+                            resize: none !important;
+                        }
+                        button {
+                            background-color: $blue;
+                            position: relative;
+                            @include csize(100%,auto);
+                            padding: 12px;
+                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 2px;
+                            border: none;
+                            cursor: pointer;
+                            font-size: 16px;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                            color: $white;
+                            @include easings(120ms);
+                            &:hover {
+                                background-color: $warm-blue;
+                            }
+                        }
+                        p {
+                            font-size: 15px;
+                            letter-spacing: 1px;
+                            @include csize(100%,auto);
+                            word-wrap: break-word;
+                            font-weight: 500;
+                            color: $black;
+                            padding: 4px;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+            .not__exsits {
+                font-size: 20px;
+                font-weight: 700;
+                color: $black;
+                opacity: 0.8;
+                letter-spacing: 1.5px;
+                text-align: center;
+                padding: 12px;
+                margin: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'mixs';
+
+.search__box {
+    @include csize(100%,auto);
+    padding: 0;
+    * {
+        @extend %Spline-Sans;
+    }
+    form {
+        position: relative;
+        @include fsize;
+        input {
+            background-color: $white;
+            @include csize(100%,45px);
+            position: relative;
+            padding: 8px 55px 8px 8px;
+            font-size: 15px;
+            letter-spacing: 1px;
+            font-weight: 500;
+            color: $black;
+            border: 2px;
+            border: 1px solid hsla(251, 20%, 17%, 0.1);
+            @include box-shadow(0px,0px,10px,-5px,hsla(251, 20%, 17%, 0.25));
+            @include easings(120ms);
+        }
+        div {
+            background-color: $white;
+            @include csize(45px,45px);
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid hsla(251, 20%, 17%, 0.1);
+            border-top-right-radius: 2px;;
+            border-bottom-right-radius: 2px;;
+            cursor: pointer;
+            @include user-select(none);
+            span {
+                font-size: 22px;
+            }
+            .material-symbols-rounded {
+                color: $black;
+                font-variation-settings:
+                'FILL' 1,
+                'wght' 700,
+                'GRAD' 200,
+                'opsz' 48
+            }
+        }
+    }
+}

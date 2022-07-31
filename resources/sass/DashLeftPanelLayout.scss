@@ -1,0 +1,18 @@
+@import 'variables';
+@import 'mixs';
+
+.dash__leftPanel {
+    background-color: $clouds-100;
+    position: relative;
+    @include fsize;
+    @include cmax-size(480px,auto);
+    @include cmin-size(360px,auto);
+    border-right: 1px solid hsla(250, 20%, 17%, 0.075);
+    .leftPanel__layout__ps {
+        position: relative;
+        @include fsize;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden !important;
+    }
+}

@@ -1,0 +1,37 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+
+%Spline-Sans {
+    font-family: 'Spline Sans', sans-serif;
+}
+%Signika {
+    font-family: 'Signika', sans-serif;
+}
+
+// Colors
+$blue: #0088ff;
+$warm-blue: #107ad8;
+$dark-blue: #152e92;
+$darkest-blue: #010a2b;
+$red: #e3342f;
+$orange: #f6993f;
+$light-orange: #ff6047;
+$green: #0ea785;
+$teal: #4dc0b5;
+$white: #ffffff;
+$blue-white: #dce3ed;
+$black: #0a111c;
+$light-black: #151630;
+$darkest-blue: #262335;
+$eigengrau: #16161d;
+/* Clouds */
+$clouds: hsla(235, 6%, 58%, 0.3);
+$clouds-50: #F2F2F2;
+$clouds-100: #F5F5F5;
+$clouds-200: #e8ebf5;

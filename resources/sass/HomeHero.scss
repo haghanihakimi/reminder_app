@@ -1,0 +1,129 @@
+@import 'variables';
+@import 'mixs';
+
+.hero__container {
+    @include fsize;
+    position: relative;
+    display: flex;
+    padding: 45px 0 0 0;
+    * {
+        @extend %Spline-Sans;
+    }
+    .circles_bg {
+        @include fsize;
+        @include cmax-size(1080px,1080px);
+        position: absolute;
+        margin: auto;
+        @include fixSides;
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+        @include user-select(none);
+        svg {
+            @include fsize;
+            position: relative;
+            margin: auto;
+            @include blur(0.5em);
+            * {
+                @include easings(300ms);
+            }
+        }
+    }
+    .hero__front__layer {
+        background-color: hsla(226, 39%, 94%, 0.85);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include fsize;
+        @include backblur(3em);
+        .hero__container {
+            position: relative;
+            @include fsize;
+            @include cmax-size(1280px,548px);
+            margin: auto;
+            .hero__text {
+                display: inline;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 140px;
+                left: 0;
+                margin: auto;
+                @include csize(fit-content,fit-content);
+                h1 {
+                    font-size: 32px;
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                    color: $black;
+                    padding: 4px;
+                    text-align: center;
+                    margin: auto;
+                    @include text-transform(capitalize);
+                    span {
+                        color: $blue;
+                    }
+                }
+            }
+            .hero__tiles {
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                background-attachment: fixed;
+                display: inline;
+                position: absolute;
+                @include csize(360px,280px);
+                margin: auto;
+                cursor: pointer;
+                border-radius: 8px;
+                @include box-shadow(0px,0px,15px,-5px,hsla(251, 20%, 17%, 0.25));
+            }
+            .hero__tiles__left {
+                background-image: url("https://bucketfk.s3.ap-southeast-2.amazonaws.com/management.jpg");
+                top: 12px;
+                bottom: 12px;
+                left: 12px;
+            }
+            .hero__tiles__bottom {
+                background-image: url("https://bucketfk.s3.ap-southeast-2.amazonaws.com/task-management.jpg");
+                left: 0;
+                right: 0;
+                bottom: -80px;
+            }
+            .hero__tiles__right {
+                background-image: url("https://bucketfk.s3.ap-southeast-2.amazonaws.com/scheduling-illustration.jpg");
+                right: 12px;
+                top: 12px;
+                bottom: 12px;
+            }
+        }
+        @include phone (1100px) {
+            .hero__container {
+                display: flex;
+                flex-direction: column;
+                .hero__text {
+                    position: relative;
+                    margin: auto;
+                    bottom: initial;
+                    left: initial;
+                    right: initial;
+                    top: initial;
+                }
+                .hero__tiles {
+                    position: relative;
+                    @include csize(200px,120px);
+                    bottom: initial;
+                    left: initial;
+                    right: initial;
+                    top: initial;
+                }
+                .hero__tiles__bottom {
+                    display: none;
+                }
+            }
+        }
+    }
+}

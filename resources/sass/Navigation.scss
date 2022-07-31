@@ -1,0 +1,103 @@
+@import 'variables';
+@import 'mixs';
+
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0;
+    margin: auto;
+    @include fsize;
+    @include user-select(none);
+    @include phone(720px) {
+        .desktop__nav {
+            ul {
+                display: none;
+            }
+        }
+        .mobile__nav {
+            display: flex !important;
+        }
+    }
+    .desktop__nav {
+        position: relative;
+        display: block;
+        @include csize(fit-content, 100%);
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                display: inline-block;
+                a {
+                    display: inline-block;
+                    text-decoration: none;
+                    padding: 12px;
+                    margin: auto;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    @extend %Spline-Sans;
+                    color: $black;
+                    @include text-transform(uppercase);
+                    @include easings(120ms);
+                    @include scale(1.0,1.0);
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+                a.active {
+                    font-weight: 700;
+                    color: $orange;
+                }
+                form {
+                    position: relative;
+                    @include csize(auto, auto);
+                    button {
+                        background-color: transparent;
+                        display: inline-block;
+                        padding: 12px;
+                        margin: auto;
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                        font-weight: 500;
+                        @extend %Spline-Sans;
+                        color: $black;
+                        @include text-transform(uppercase);
+                        @include easings(120ms);
+                        @include scale(1.0,1.0);
+                        border: none;
+                        cursor: pointer;
+                        &:hover {
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .mobile__nav {
+        position: relative;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        @include csize(45px,45px);
+        button {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            @include csize(32px,32px);
+            font-size: 25px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            span {
+                font-size: 27px;
+                font-weight: 600;
+            }
+        }
+    }
+}

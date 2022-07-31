@@ -1,0 +1,136 @@
+@import 'variables';
+@import 'mixs';
+
+.container {
+    position: relative;
+    @include fsize;
+    padding: 0;
+    z-index: 0;
+    * {
+        @extend %Spline-Sans;
+    }
+    .wrapper {
+        @include fsize;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+        padding: 24px;
+        .inner__wrapper {
+            position: relative;
+            margin: 0 auto auto auto;
+            @include csize(100%,auto);
+            @include cmax-size(848px,auto);
+            margin: auto;
+            .list__box {
+                position: relative;
+                @include csize(100%,auto);
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin: auto;
+                .list {
+                    background-color: $body-bg;
+                    position: relative;
+                    display: block;
+                    @include csize(100%,auto);
+                    margin: auto;
+                    padding: 12px;
+                    border-radius: 8px;
+                    border: 1px solid hsla(250, 20%, 17%, 0.1);
+                    @include box-shadow(0px,0px,18px,-15px,rgba(0,0,0,0.64));
+                    .item {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0;
+                        @include csize(100%,auto);
+                        .title, .dateTime {
+                            position: relative;
+                            display: block;
+                            padding: 4px;
+                            font-size: 15px;
+                            letter-spacing: 1px;
+                            color: $black;
+                            opacity: 0.7;
+                        }
+                        .reminder__title, .reminder__descriptions, .due__date {
+                            padding: 4px;
+                            letter-spacing: 1px;
+                            color: $black;
+                            font-weight: 500;
+                            font-size: 16px;
+                            word-wrap: break-word;
+                            .overdue {
+                                color: $red;
+                            }
+                            .deadline {
+                                color: $orange;
+                            }
+                            .coming {
+                                color: $green;
+                            }
+                            .material-symbols-rounded {
+                                font-size: 09px;
+                                font-variation-settings:
+                                    'FILL' 1,
+                                    'wght' 700,
+                                    'GRAD' 200,
+                                    'opsz' 48;
+                            }
+                        }
+                        .reminder__descriptions {
+                            opacity: 0.8;
+                            font-size: 14px;
+                            padding: 4px 4px 4px 22px;
+                        }
+                        .controls {
+                            position: relative;
+                            @include csize(100%,auto);
+                            padding: 8px 0 0 0;
+                            a {
+                                background-color: transparent;
+                                position: relative;
+                                text-decoration: none;
+                                display: inline-flex;
+                                flex-direction: row;
+                                gap: 4px;
+                                border: none;
+                                margin: auto 0 auto 0;
+                                padding: 5px;
+                                justify-content: flex-start;
+                                align-items: center;
+                                cursor: pointer;
+                                border-radius: 2px;
+                                @include easings(120ms);
+                                span {
+                                    font-size: 15px;
+                                    letter-spacing: 1px;
+                                    font-weight: 500;
+                                    @include easings(120ms);
+                                }
+                                .material-symbols-rounded {
+                                    font-variation-settings:
+                                        'FILL' 1,
+                                        'wght' 700,
+                                        'GRAD' 200,
+                                        'opsz' 48;
+                                }
+                                .edit {
+                                    color: $blue;
+                                }
+                                .delete {
+                                    color: $light-orange;
+                                }
+                                .ignore {
+                                    color: $orange;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

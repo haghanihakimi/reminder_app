@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'mixs';
+
+.home__sections {
+    position: relative;
+    @include fsize;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

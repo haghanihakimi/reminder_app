@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'mixs';
+
+.logo {
+    position: relative;
+    @include csize(fit-content, 100%);
+    @include user-select(none);
+    a {
+        text-decoration: none;
+        padding: 0;
+        display: block;
+        .logo__text {
+            font-size: 20px;
+            font-weight: 600;
+            color: $darkest-blue;
+            letter-spacing: 1px;
+            @extend %Spline-Sans;
+            padding: 8px;
+            margin: 0;
+        }
+    }
+}
