@@ -45,20 +45,20 @@ The default password for user account is: **password**
 ## Configure & run the project!
 1. Clone repository:
     ``` $ git clone https://github.com/haghanihakimi/reminder_app ```
-2. Install **node modules**
+2. Install **node modules** <br>
     ```$ npm install```
-3. Install Laravel plugins and required packages:
+3. Install Laravel plugins and required packages: <br>
     ```$ composer install```
-4. Build assets:
+4. Build assets: <br>
     ```npm run dev```
-5. Setup configuration:
+5. Setup configuration: <br>
     ```cp .env.example .env```
-6. Generate application key:
+6. Generate application key: <br>
     ```php artisan key:generate```
 7. Create a new MySQL database and name it **reminders**
-8. Run database migration and fill **users** & **reminders** tables with random data:
+8. Run database migration and fill **users** & **reminders** tables with random data: <br>
     ```php artisan migrate:fresh --seed```
-9. Run the dev server (the output will give the address):
-    ```php artisan serve```
-    OR
-    ```php artisan serve --port=443```
+9. Run the dev server (the output will give the address): <br>
+    ```php artisan serve``` <br>
+    OR <br>
+    ```php artisan serve --port=443``` <br>
