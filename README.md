@@ -43,7 +43,7 @@ The default password for user account is: **password**
 
 
 ## Configure & run the project!
-1. Clone repository:
+1. Clone repository: <br>
     ``` $ git clone https://github.com/haghanihakimi/reminder_app ```
 2. Install **node modules** <br>
     ```$ npm install```
